@@ -1,0 +1,9 @@
+CREATE SEQUENCE STUDENT_ID_SEQ MINVALUE 0 INCREMENT BY 1;
+
+CREATE TABLE STUDENT (
+    id VARCHAR,
+    name VARCHAR,
+    surname VARCHAR,
+    born DATE,
+    averageGrade VARCHAR
+)

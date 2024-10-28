@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: pocopentelemetry
+
+  datasource:
+    url: jdbc:mariadb://raspberry1:3306/testdb
+    username: testuser
+    password: testuser
+    driver-class-name: org.mariadb.jdbc.Driver
