@@ -16,3 +16,7 @@ services:
 
 volumes:
   mariadb_data:
+    driver_opts:
+      type: "xfs"
+      o: "size=2G"
+      device: "/var/lib/docker/volumes/mariadb_data/_data"
