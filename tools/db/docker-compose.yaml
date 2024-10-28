@@ -1,22 +1,25 @@
 version: '3.8'
 
 services:
-  mariadb:
+  dbmaria:
     image: mariadb:latest
-    container_name: mariadb
+    container_name: dbmaria
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: testdb
       MYSQL_USER: testuser
       MYSQL_PASSWORD: testuser
+    networks:
+      - otel_default
     ports:
       - "3306:3306"
     volumes:
       - mariadb_data:/var/lib/mysql
 
+networks:
+  otel_default:
+    driver: bridge
+
 volumes:
   mariadb_data:
-    driver_opts:
-      type: "xfs"
-      o: "size=2G"
-      device: "/var/lib/docker/volumes/mariadb_data/_data"
+
