@@ -7,3 +7,8 @@ spring:
     driver-class-name: org.sqlite.JDBC
     username: testuser
     password: testuser
+
+  #Sqlite is not supported out of the box
+  data:
+    jdbc:
+      dialect: h2
