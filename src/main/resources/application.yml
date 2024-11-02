@@ -3,7 +3,7 @@ spring:
     name: pocopentelemetry
 
   datasource:
-    url: jdbc:mariadb://raspberry1:3306/testdb
+    url: jdbc:sqlite:tools/db/init_db.db
+    driver-class-name: org.sqlite.JDBC
     username: testuser
     password: testuser
-    driver-class-name: org.mariadb.jdbc.Driver
