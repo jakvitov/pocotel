@@ -3,12 +3,11 @@ spring:
     name: pocopentelemetry
 
   datasource:
-    url: jdbc:sqlite:tools/db/init_db.db
-    driver-class-name: org.sqlite.JDBC
+    url: jdbc:postgresql://raspberry1.local:5432/testdb
     username: testuser
-    password: testuser
+    password: secret
 
   #Sqlite is not supported out of the box
   data:
     jdbc:
-      dialect: h2
+      dialect: postgresql

@@ -1,0 +1,12 @@
+#Create new student
+POST http://localhost:8080/api/student/new
+Content-Type: application/json
+
+{
+  "firstName": "Jan",
+  "lastName": "Novak",
+  "birthDate": "2001-11-01",
+  "averageGrade": 2.154874
+}
+
+###

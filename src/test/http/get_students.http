@@ -1,0 +1,11 @@
+### Get top 2 students
+GET http://localhost:8080/api/student/top/2
+Accept: application/json
+
+### Get all students
+GET http://localhost:8080/api/student/all
+Accept: application/json
+
+###
+
+
