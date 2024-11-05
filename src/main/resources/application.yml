@@ -4,6 +4,7 @@ spring:
 
   datasource:
     url: jdbc:postgresql://raspberry1.local:5432/testdb
+    driver-class-name: org.postgresql.Driver
     username: testuser
     password: secret
 
