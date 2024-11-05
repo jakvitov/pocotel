@@ -27,4 +27,8 @@ class StudentService {
     fun saveStudent(student: StudentCreationRequest) {
         studentRepository.save(Student(student))
     }
+
+    fun deleteStudent(id: Long) {
+        studentRepository.deleteById(id);
+    }
 }

@@ -31,4 +31,10 @@ class StudentController {
         return ResponseEntity.ok("OK")
     }
 
+    @DeleteMapping("/delete/{id}")
+    fun removeStudent(@PathVariable("id") id: Long): ResponseEntity<String> {
+        studentService.deleteStudent(id)
+        return ResponseEntity.ok("OK")
+    }
+
 }
