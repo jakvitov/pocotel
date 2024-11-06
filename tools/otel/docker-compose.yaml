@@ -1,4 +1,4 @@
-version: "4.0"
+version: "3.8"
 
 services:
 
@@ -6,11 +6,12 @@ services:
     image: otel/opentelemetry-collector:0.72.0
     command: [ "--config=/etc/otel-collector-config.yml" ]
     volumes:
-      - ./otel-config.yml:/etc/otel-collector-config.yml
+      - ./otel-collector-config.yml:/etc/otel-collector-config.yml
     ports:
       - "4317:4317"
+      - "4318:4318"
     depends_on:
-      - jaeger-service
+      - jaeger-service # First start jaeger service
 
   jaeger-service:
     image: jaegertracing/all-in-one:latest
