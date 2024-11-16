@@ -1,26 +1,23 @@
-#OTEL pipeline setup with export to jaeger
 receivers:
   otlp:
     protocols:
-      grpc:
-        endpoint: 0.0.0.0:4317
       http:
-        endpoint: 0.0.0.0:4318
-
-processors:
-  batch:
+        endpoint: "0.0.0.0:4318"
 
 exporters:
-  logging:
-    loglevel: debug
   jaeger:
-    endpoint: jaeger-service:14250
+    endpoint: "jaeger-service:14250"
     tls:
       insecure: true
+  otlp/logs:
+    endpoint: "localhost:4318"  # Or configure to another log endpoint if desired
+    compression: "none"
 
 service:
   pipelines:
     traces:
-      receivers:  [ otlp ]
-      processors: [ batch ]
-      exporters:  [ logging, jaeger ]
+      receivers: [otlp]
+      exporters: [jaeger]
+    logs:
+      receivers: [otlp]
+      exporters: [otlp/logs]  # Use OTLP for logs
